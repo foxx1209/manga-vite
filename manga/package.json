@@ -1,0 +1,58 @@
+{
+  "name": "manga",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "author": "",
+  "browserslist": [
+    "defaults"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "lint:html": "markuplint \"**/*.html\"",
+    "lint:style": "biome check --write ./src && stylelint --fix **/*.{css,scss,sass}",
+    "lint:script": "biome check --write ./src",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.html": [
+      "markuplint",
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "biome check --write",
+      "stylelint --fix"
+    ],
+    "*.{ts,tsx,js,jsx}": "biome check --write"
+  },
+  "devDependencies": {
+    "@types/node": "^22.12.0",
+    "@biomejs/biome": "^2.4.12",
+    "@hilosiva/biome-config": "^0.0.5",
+    "@hilosiva/stylelint-config": "^0.0.3",
+    "@hilosiva/vite-plugin-html-loader": "^0.2.0",
+    "@hilosiva/vite-plugin-image-optimizer": "^0.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "@hilosiva/markuplint-config": "^0.0.5",
+    "markuplint": "^4.14.1",
+    "prettier": "^3.8.3",
+    "stylelint": "^17.8.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recess-order": "^7.7.0",
+    "vaultscript": "^0.2.4",
+    "vite": "^7.3.2",
+    "vaultcss": "^0.3.5",
+    "vite-plugin-vaultcss": "^0.3.2",
+    "gsap": "latest",
+    "@splidejs/splide": "latest"
+  },
+  "volta": {
+    "node": "22.12.0"
+  }
+}

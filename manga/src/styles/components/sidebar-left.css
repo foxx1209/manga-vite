@@ -1,0 +1,110 @@
+
+.sidebar-left {
+
+  @media (--md) {
+    padding-top: clamp(rem(180)* var(--torem), 35vh, rem(355)* var(--torem));
+    left: 0;
+  }
+}
+
+
+
+.sidebar-left__contents {
+  @media (--md) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(calc(20* var(--torem)), 3vw, calc(45* var(--torem)));
+    padding-inline: clamp(calc(8* var(--torem)), 1vw, calc(16* var(--torem)));
+  }
+}
+
+.sidebar-left__contents img {
+  @media (--md) {
+    aspect-ratio: 320.7/165.1;
+    inline-size: min(calc(320.7* var(--torem)), 100%);
+    object-fit: cover;
+  }
+}
+
+.sidebar-left__logo {
+  @media (--md) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(calc(4* var(--torem)), 0.5vw, calc(8* var(--torem)));
+    padding: clamp(calc(10* var(--torem)), 1.5vw, calc(20* var(--torem))) clamp(calc(12* var(--torem)), 1.5vw, calc(24* var(--torem)));
+    border-radius: calc(4* var(--torem));
+  }
+}
+
+.sidebar-left__logo-main,
+.sidebar-left__logo-sub {
+  @media (--md) {
+    display: inline-block;
+    color: $black;
+    line-height: 1;
+    font-weight: $medium;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+}
+
+.sidebar-left__logo-main {
+  @media (--md) {
+    font-size: clamp(calc(10* var(--torem)), 1.5vw, calc(20* var(--torem)));
+    padding-inline: clamp(calc(4* var(--torem)), 0.5vw, calc(8* var(--torem)));
+    padding-block: clamp(calc(3* var(--torem)), 0.5vw, calc(6* var(--torem)));
+  }
+}
+
+.sidebar-left__logo-sub {
+  @media (--md) {
+    font-size: clamp(calc(11* var(--torem)), 1.8vw, calc(25* var(--torem)));
+    padding-inline: clamp(calc(2* var(--torem)), 0.4vw, calc(4.5* var(--torem)));
+    padding-block: clamp(calc(3* var(--torem)), 0.5vw, calc(6* var(--torem)));
+  }
+}
+
+.sidebar-left__text {
+  @media (--md) {
+    text-align: center;
+    font-size: clamp(calc(10* var(--torem)), 1.5vw, calc(20* var(--torem)));
+    font-weight: $bold;
+  }
+}
+
+/* li の色は触らない（inherit しない） */
+.sidebar-left__text-item {
+  cursor: pointer;
+}
+
+/* a が色を表現する唯一の要素 */
+.sidebar-left__text-item a {
+  @media (--md) {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding-block: clamp(calc(4* var(--torem)), 0.6vw, calc(8* var(--torem)));
+    transition: color 0.3s ease;
+  }
+}
+
+/* 間隔 */
+.sidebar-left__text-item:not(:first-child) {
+  @media (--md) {
+    margin-top: clamp(calc(6* var(--torem)), 1vw, calc(15* var(--torem)));
+  }
+}
+
+/* hover → a だけ色変わる */
+.sidebar-left__text-item:hover a {
+  @media (--md) {
+  }
+}
+
+/* active → a だけ色変わる（他は絶対に影響しない） */
+.sidebar-left__text-item.is-active a {
+  @media (--md) {
+  }
+}

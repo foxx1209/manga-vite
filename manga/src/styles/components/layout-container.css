@@ -1,0 +1,77 @@
+@media screen and (min-width: 768px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+:where(.layout-container)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+:where(.layout-container) {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  main {
+    width: 100%;
+    inline-size: calc( 508* var(--torem));
+    margin-inline: auto;
+    background-color: $white;
+  }
+
+  :where(.sidebar-left),
+  :where(.sidebar-right) {
+    display: none;
+  }
+
+    @media (--md) {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 508px) 1fr;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: $white;
+
+    main {
+      grid-column: 2;
+      height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      scrollbar-gutter: stable;
+      margin-inline: 0;
+      max-width: none;
+      position: relative;
+      z-index: 15;
+      box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    :where(.sidebar-left) {
+      display: block; 
+      grid-column: 1;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      z-index: 5;
+    }
+
+    :where(.sidebar-right) {
+      display: block; 
+      grid-column: 3;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      z-index: 5;
+    }
+  }
+}
+
